@@ -1,7 +1,8 @@
 [build]
   base = "routes"
   command = "ng build --configuration=production"
-  publish = "routes/dist/routes"
+  publish = "routes/dist/boutiqueTulip"
+
 
 [[redirects]]
   from = "/*"
