@@ -1,3 +1,9 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/routes"
+  base = "routes"
+  command = "ng build --configuration=production"
+  publish = "routes/dist/boutiqueTulip"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
