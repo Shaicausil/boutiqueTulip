@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+
+
+  <div class="home">
+
+  <div class="carusel">
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+
+    <div class="carusel-images">
+      <img [src]="images[currentIndex]" alt="slide" />
+    </div>
+
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+  </div>
+
+  <div class="seccion">
+    <h2>Bienvenido </h2>
+    <p> Bienvenidos a TulipBoutique 
+Donde cada flor cuenta una historia de elegancia, frescura y distinción. <br>
+
+Nos especializamos en flores premium seleccionadas con el mayor cuidado para que cada arreglo transmita emociones únicas. <br> Ya sea un detalle especial, un regalo inolvidable o la decoración perfecta, aquí encontrarás la belleza natural en su máxima expresión. <br>
+
+<br> Flores exclusivas, frescas y de calidad superior.
+<br> Diseños únicos que enamoran a primera vista.
+<br> Pasión por los detalles y el arte floral. <br>
+
+ Porque regalar flores de calidad es regalar momentos eternos.</p>
+  </div>
+
+ <div class="secciones-contenedor">
+  <div class="seccionBoton" routerLink="/catalogo" routerLinkActive="active" >
+    <h2>Catálogo</h2>
+    <p>Revisa todos nuestros productos organizados para tu comodidad.</p>
+ 
+  </div>
+
+  <div class="seccionBoton" routerLink="/testimonios" routerLinkActive="active">
+    <h2>Testimonios</h2>
+    <p>Conoce lo que opinan nuestros clientes sobre su experiencia.</p>
+    
+  </div>
+</div>
+
+</div>
+
+  
+
+
+<app-footer></app-footer>
+

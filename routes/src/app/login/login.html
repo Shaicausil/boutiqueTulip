@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<div class="container">
+  <div class="left">
+    <img [src]="loginP()" alt="Foto" />
+  </div>
+  <div class="right">
+    <h2>Holaaaa :3 </h2>
+    <p>Ingresa</p>
+
+    <div class="input-box">
+      <input type="text" placeholder="Enter username"
+             [(ngModel)]="usernameValue">
+    </div>
+
+    <div class="input-box">
+      <input type="password" placeholder="Password"
+             [(ngModel)]="passwordValue">
+    </div>
+
+    <p style="color: red;" *ngIf="error()">{{ error() }}</p>
+
+    <button class="btn" (click)="signIn()">Sign In</button>
+
+    <div class="social-login">
+      <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+      <img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Apple">
+      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

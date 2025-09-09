@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+
+<section class="productos">
+  <div class="tarjeta" *ngFor="let p of productos()">
+    <div class="img-contenedor">
+      <img [src]="p.imagen" [alt]="p.nombre">
+    </div>
+    <div class="info">
+      <h3 class="titulo">{{ p.nombre }}</h3>
+      <div class="precio">
+        <span class="precio-actual">${{ p.precio }}</span>
+      </div>
+      <button class="btn-carrito" (click)="agregar(p)">Agregar al carrito</button>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+
+
+.testimonios {
+  text-align: center;
+  padding: 60px 20px;
+  width: 70%;
+  
+}
+
+.testimonios h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ddcba4;
+}
+
+.testimonios .intro {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.contenedor-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tarjeta {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+}
+
+.texto {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.cliente {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cliente img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.cliente h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #ddbca4;
+}
+
+.cliente span {
+  font-size: 0.85rem;
+  color: #777;
+}
