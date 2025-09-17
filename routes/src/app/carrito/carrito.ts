@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass } from '@angular/common';
 import { ProductosService } from '../services/productos.service';
 import { Nav } from '../shared/components/nav/nav';
 import { Footer } from '../shared/components/footer/footer';
@@ -9,7 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive,NgFor, NgIf, Nav, Contacto, Footer],
+  imports: [RouterLink, RouterLinkActive, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass, Nav, Contacto, Footer],
   templateUrl: './carrito.html',
   styleUrls: ['./carrito.css']
 })
@@ -26,3 +26,4 @@ export class Carrito {
     this.servicio.vaciarCarrito();
   }
 }
+

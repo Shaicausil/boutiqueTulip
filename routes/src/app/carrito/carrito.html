@@ -3,19 +3,32 @@
 <section class="carrito" *ngIf="carrito().length > 0; else vacio">
   <h2>Mi Carrito</h2>
   <div class="carrito-lista">
-    <div class="item" *ngFor="let p of carrito()">
+    <div class="item"
+         *ngFor="let p of carrito()"
+         [ngClass]="{'cantidad-alta': p.cantidad > 5}">
       <img [src]="p.imagen" [alt]="p.nombre" class="img-carrito">
       <div class="info">
         <h3>{{ p.nombre }}</h3>
         <p>Cantidad: {{ p.cantidad }}</p>
         <p>Precio: ${{ p.precio * p.cantidad }}</p>
-        <button (click)="quitar(p.id)">❌ Quitar</button>
+
+    
+        <div [ngSwitch]="true">
+          <p *ngSwitchCase="p.cantidad === 1">Solo 1 en carrito</p>
+          <p *ngSwitchCase="p.cantidad > 5">¡Compraste bastante de este producto!</p>
+          <p *ngSwitchDefault>Cantidad normal</p>
+        </div>
+
+        <button (click)="quitar(p.id)">Quitar</button>
       </div>
     </div>
   </div>
 
   <div class="total">
-    <h3>Total: ${{ total() }}</h3>
+ 
+    <h3 [ngStyle]="{'color': total() > 200000 ? 'red' : 'black'}">
+      Total: ${{ total() }}
+    </h3>
     <button (click)="vaciar()">Vaciar carrito</button>
   </div>
 </section>
@@ -30,4 +43,3 @@
 </ng-template>
 
 <app-footer></app-footer>
-

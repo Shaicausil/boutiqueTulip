@@ -67,3 +67,9 @@ button:hover {
   text-decoration: none;
   margin-top: 20px;
 }
+
+
+.cantidad-alta {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}

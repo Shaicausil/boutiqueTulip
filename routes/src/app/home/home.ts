@@ -13,9 +13,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Home {
 
     images = [
-    'assets/img/carrusel1.jpg',
-    'assets/img/carrusel2.jpg',
-    'assets/img/carrusel3.jpg'
+    'https://res.cloudinary.com/dv6nljzc7/image/upload/v1757954174/carrusel1_agimgw.jpg',
+    'https://res.cloudinary.com/dv6nljzc7/image/upload/v1757954135/carrusel2_ahiqyo.jpg',
+    'https://res.cloudinary.com/dv6nljzc7/image/upload/v1757954129/carrusel3_e2kv2h.jpg'
   ];
 
   currentIndex = 0;

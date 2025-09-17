@@ -79,3 +79,24 @@
 .btn-carrito:hover {
   background: #f08fbb;
 }
+
+
+
+
+.premium {
+  border: 2px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+
+.stock-warning {
+  font-size: 0.9rem;
+  color: red;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.btn-carrito.agregado {
+  background-color: green;
+  cursor: not-allowed;
+}
