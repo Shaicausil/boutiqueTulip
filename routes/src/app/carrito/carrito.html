@@ -1,45 +1,49 @@
 <app-nav></app-nav>
 
-<section class="carrito" *ngIf="carrito().length > 0; else vacio">
-  <h2>Mi Carrito</h2>
-  <div class="carrito-lista">
-    <div class="item"
-         *ngFor="let p of carrito()"
-         [ngClass]="{'cantidad-alta': p.cantidad > 5}">
-      <img [src]="p.imagen" [alt]="p.nombre" class="img-carrito">
-      <div class="info">
-        <h3>{{ p.nombre }}</h3>
-        <p>Cantidad: {{ p.cantidad }}</p>
-        <p>Precio: ${{ p.precio * p.cantidad }}</p>
+@if (carrito().length > 0) {
+  <section class="carrito">
+    <h2>Mi Carrito</h2>
+    <div class="carrito-lista">
+      @for (p of carrito(); track p.id) {
+        <div class="item" [ngClass]="{'cantidad-alta': p.cantidad > 5}">
+          <img [src]="p.imagen" [alt]="p.nombre" class="img-carrito">
+          <div class="info">
+            <h3>{{ p.nombre }}</h3>
+            <p>Cantidad: {{ p.cantidad }}</p>
+            <p>Precio: ${{ p.precio * p.cantidad }}</p>
 
-    
-        <div [ngSwitch]="true">
-          <p *ngSwitchCase="p.cantidad === 1">Solo 1 en carrito</p>
-          <p *ngSwitchCase="p.cantidad > 5">¡Compraste bastante de este producto!</p>
-          <p *ngSwitchDefault>Cantidad normal</p>
+            @switch (true) {
+              @case (p.cantidad === 1) {
+                <p>Solo 1 en carrito</p>
+              }
+              @case (p.cantidad > 5) {
+                <p>¡Compraste bastante de este producto!</p>
+              }
+              @default {
+                <p>Cantidad normal</p>
+              }
+            }
+
+            <button (click)="quitar(p.id)">Quitar</button>
+          </div>
         </div>
-
-        <button (click)="quitar(p.id)">Quitar</button>
-      </div>
+      }
     </div>
-  </div>
 
-  <div class="total">
- 
-    <h3 [ngStyle]="{'color': total() > 200000 ? 'red' : 'black'}">
-      Total: ${{ total() }}
-    </h3>
-    <button (click)="vaciar()">Vaciar carrito</button>
-  </div>
-</section>
-
-<app-contacto></app-contacto>
-
-<ng-template #vacio>
+    <div class="total">
+      <h3 [ngStyle]="{'color': total() > 200000 ? 'red' : 'black'}">
+        Total: ${{ total() }}
+      </h3>
+      <button (click)="vaciar()">Vaciar carrito</button>
+    </div>
+  </section>
+} @else {
   <div class="carrito-vacio">
     <h2>Tu carrito está vacío</h2>
     <a routerLink="/catalogo" class="btn">Ir al catálogo</a>
   </div>
-</ng-template>
+}
 
+<app-contacto></app-contacto>
 <app-footer></app-footer>
+
